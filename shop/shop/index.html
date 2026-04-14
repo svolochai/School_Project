@@ -1,0 +1,21 @@
+<h1>Наш Маркетплейс</h1>
+
+<div class="categories">
+    <h3>Категорії:</h3>
+    {% for category in categories %}
+        <p>{{ category.name }}</p>
+    {% endfor %}
+</div>
+
+<hr>
+
+<div class="items">
+    <h3>Нові товари:</h3>
+    {% for item in items %}
+        <div>
+            <img src="{{ item.image.url }}" width="200">
+            <h4><a href="{% url 'shop:detail' item.id %}">{{ item.name }}</a></h4>
+            <p>Ціна: {{ item.price }} грн.</p>
+        </div>
+    {% endfor %}
+</div>
